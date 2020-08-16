@@ -1,0 +1,125 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+#define MAX 50
+
+struct edge {
+	int u, v, weight;
+	struct edge *link;
+}*front = NULL;
+
+struct edge tree[MAX];
+int a[MAX];
+int count = 0;
+int n ;
+int wt_tree = 0;
+
+void make_tree();
+struct edge *del_q();
+void insert_tree(int s, int d, int wt);
+void insert_q(int s, int d, int wt);
+
+main()
+{
+	int i;
+	create_graph();
+	make_tree();
+	printf("Edges to be included in spanning tree are :\n");
+	for(i = 1; i <= count; i++) {
+
+		printf("%d->", tree[i].u);
+		printf("%d\n", tree[i].v);
+	}
+	printf("Weight of this minimum spanning tree is : %d\n", wt_tree);
+
+}
+create_graph()
+{
+	int i, wt, max_edges, source, destn;
+	
+	printf("no. of nodes: ");
+	scanf("%d", &n);
+	max_edges = n * (n - 1)/2;
+	for (i = 1; i <= max_edges; i++){
+		printf("enter edge: %d", i);
+		scanf("%d %d", &source, &destn);
+		if ( (source == 0) && (destn == 0))
+			break;
+		printf("weight of this edge : ");
+		scanf("%d", &wt);
+		if (source > n || destn > n || source <= 0 || destn <= 0){
+			printf("invalid\n");
+			i--;
+		}else
+			insert_q(source, destn, wt);
+	}
+}
+void make_tree()
+{
+	struct edge *temp;
+	int n1, n2, r1, r2;
+
+	while (count < n - 1){
+		temp = del_q();
+		n1 = temp->u;
+		n2 = temp->v;
+
+		while (n1 > 0){
+			r1 = n1;
+			n1 = a[n1];
+		}
+		while (n2 > 0){
+			r2 = n2;
+			n2 = a[n2];
+		}
+ 	if (r1 != r2){
+			insert_tree(temp->u, temp->v, temp->weight);
+			wt_tree = wt_tree + temp-> weight;
+			a[r2] = r1;
+		}
+	}
+}
+void insert_tree(int s, int d, int wt)
+{
+	count++;
+	tree[count].u = s;
+	tree[count].v = d;	
+	tree[count].weight = wt;
+}
+
+void insert_q(int s, int d, int wt)
+{
+
+	struct edge *temp, *q;
+
+	temp = (struct edge *)malloc(sizeof(struct edge));
+	temp->u = s;
+	temp->v = d;
+	temp->weight = wt;	
+	
+	if (front == NULL || temp->weight < front->weight){
+		temp->link = front;
+		front = temp;
+	} else {
+		q = front;
+		while (q->link != NULL && q->link->weight <= temp->weight)
+			q = q->link;
+			temp->link = q->link;
+			q->link = temp;
+			if (q->link == NULL){
+				temp->link = NULL;
+			}
+	}
+}
+		
+
+
+			
+struct edge *del_q()
+{
+	struct edge *temp;
+	temp = front;
+	//printf("Edge processed is %d->%d %d\n",temp->u,temp->v,temp->weight);
+	front = front->link;
+	return temp;
+}

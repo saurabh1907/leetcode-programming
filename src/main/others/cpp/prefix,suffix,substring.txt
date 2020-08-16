@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<string.h>
+void prefix(char word[])
+{
+    int x=strlen(word);int i,k,j=1;
+    printf("prefixes are\n \n");
+    for(i=0;i<x;i++)
+    {
+    for(k=0;k<j;k++)
+    {
+        printf("%c",word[k]);
+
+    }j++;
+    printf("\n");
+    }
+}
+void suffix(char word[])
+{
+    int x=strlen(word);int i,k,j=0;
+     printf("suffixes are\n \n");
+    for(i=0;i<x;i++)
+    {
+        for(k=j;k<x;k++)
+        {
+             printf("%c",word[k]);
+        }j++;
+printf("\n");
+    }
+
+}
+void substring(char word[])
+{int x=strlen(word);int i,k,l,j;
+for(i=1;i<=x;i++)
+{j=i;
+    for(l=0;l+i<=x;l++)
+    {
+    for(k=l;k<j;k++)
+    {
+     printf("%c",word[k]);
+    }j++;printf(",");
+    }printf("\n");
+}
+}
+void main()
+{
+    char word[20];
+    int ch;
+    printf("enter the string\n");
+    gets(word);
+    do
+    {
+    printf("enter choice \n1.prefix\n2.suffix\n3.substring\n4.exit");
+    scanf("%d",&ch);
+    if(ch==1)
+    prefix(word);
+    else if(ch==2)
+    suffix(word);
+    else if(ch==3)
+    substring(word);
+    else if(ch==4)
+        printf("exit");
+    else
+        printf("invalid");
+    }
+        while(ch!=4);
+}

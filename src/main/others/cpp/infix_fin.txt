@@ -1,0 +1,74 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+#include<ctype.h>
+#define MAX 20
+int top,i;
+int priority(char item1){
+if(item1 == ')'|| item1 =='(');
+return 0;
+if(item1 == '+' || item1 == '-')
+return 1;
+if(item1 == '*' || item1 == '/')
+return 2;
+}
+
+void push(char stack[],char item)
+{
+if(top == (MAX-1)){
+printf("stack overflow");
+return;
+}
+top++;
+stack[top]=item;
+}
+void print(char stack[], int top)
+{
+while(top!=-1){
+printf("%c ",stack[top]);//%s ki jagah %c
+top=top-1;
+}}
+int pop(char stack[])
+{
+ if(top == -1)
+ return;
+ char temp;
+ temp = stack[top];
+ --top;
+ printf("%c",temp);
+}
+
+int main()
+{
+char stack[MAX];
+char x[20];
+top = -1;
+push(stack,'(');
+char token;
+printf("enter the expression to get postfix from infix : \n");
+scanf("%s",x);
+for(i=0;x[i]!='\0';i++)
+{
+token = x[i];
+if (isalnum(token))
+printf("%c",token);
+else{
+if(token=='(') //new statement
+    push(stack,token);
+else if(token==')'){
+    while(stack[top]!='(')
+        pop(stack);
+    }
+//if((priority(token)>=priority(stack[top]))|| (token == '('))
+ //   push(stack,token);
+else {
+while(priority(token)<priority(stack[top]))
+{
+        pop(stack);
+}
+push(stack,token);
+}
+}
+}
+return 0;
+}

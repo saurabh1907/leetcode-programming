@@ -1,0 +1,116 @@
+------------------------
+Topics
+------------------------
+
+Chat application design	
+protocols http vs xhtml
+Maven goals, scope
+SOA system/architechture
+Bookmyshow design and how handle concurrency
+KMP Algorithm
+Ear vs war
+CQRS
+Mongo- Mongo full text search, Geospatial index, Compound index, mongo db replica set
+Concurrent hash map
+Docker
+Hadoop
+AWS, Big Data
+RAML
+skeleton frontend calling rest api in backend integrated with a database
+------------------------
+Questions To Attempt
+------------------------
+
+Less IMP
+https://www.geeksforgeeks.org/internal-working-of-sethashset-in-java/
+https://www.google.com/amp/s/www.geeksforgeeks.org/merge-sort-for-linked-list/amp/
+https://www.geeksforgeeks.org/given-n-appointments-find-conflicting-appointments/
+
+
+More IMP
+https://www.geeksforgeeks.org/job-sequencing-problem/
+
+https://www.techiedelight.com/rot-cutting/
+
+https://www.techiedelight.com/coin-change-making-problem-unlimited-supply-coins/
+
+https://www.geeksforgeeks.org/minimize-cash-flow-among-given-set-friends-borrowed-money/
+
+https://www.techiedelight.com/levenshtein-distance-edit-distance-problem/
+https://www.geeksforgeeks.org/job-sequencing-problem/
+
+https://www.techiedelight.com/shortest-common-supersequence-introduction-scs-length/
+
+https://algorithms.tutorialhorizon.com/maximum-difference-between-two-elements-where-larger-element-appears-after-the-smaller-element/
+
+https://algorithms.tutorialhorizon.com/dynamic-programming-split-the-string-into-minimum-number-of-palindromes/
+
+https://algorithms.tutorialhorizon.com/dynamic-programming-minimum-jumps-to-reach-to-end/
+
+https://www.techiedelight.com/0-1-knapsack-problem/
+
+
+***very tricky***
+https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/
+https://www.geeksforgeeks.org/partition-problem-dp-18/
+https://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/
+https://www.geeksforgeeks.org/counting-inversions/
+https://www.geeksforgeeks.org/construct-all-possible-bsts-for-keys-1-to-n/
+https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array-set-3-worst-case-linear-time/
+https://leetcode.com/problems/rotting-oranges/
+https://leetcode.com/problems/median-of-two-sorted-arrays/
+https://leetcode.com/problems/generate-parentheses/solution/
+------------------------
+Saved Solved Questions
+------------------------
+https://leetcode.com/problems/count-primes/
+https://www.geeksforgeeks.org/find-the-missing-number-in-a-sorted-array/
+https://www.geeksforgeeks.org/check-if-an-array-can-be-divided-into-pairs-whose-sum-is-divisible-by-k/
+https://www.geeksforgeeks.org/find-four-elements-a-b-c-and-d-in-an-array-such-that-ab-cd/
+https://leetcode.com/problems/k-closest-points-to-origin/solution/
+https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/
+https://www.geeksforgeeks.org/find-rectangle-binary-matrix-corners-1/
+https://leetcode.com/problems/next-permutation/
+https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion/
+https://www.geeksforgeeks.org/level-order-tree-traversal/
+https://www.geeksforgeeks.org/print-binary-tree-vertical-order/
+https://www.geeksforgeeks.org/level-order-traversal-line-line-set-2-using-two-queues/
+https://www.geeksforgeeks.org/construct-bst-from-given-preorder-traversa/
+https://www.geeksforgeeks.org/binary-tree-to-binary-search-tree-conversion/
+https://www.quora.com/Given-a-circular-linked-list-how-do-I-find-the-longest-sequence-of-no-repeated-value-nodes
+https://leetcode.com/problems/majority-element/solution/    -> see last approach voting algo
+
+DP->
+https://www.geeksforgeeks.org/longest-common-substring-dp-29/
+https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12/
+https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/
+https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
+https://www.geeksforgeeks.org/minimum-insertions-to-form-a-palindrome-dp-28/
+https://www.programcreek.com/2012/12/leetcode-solution-word-break/
+
+***very tricky***
+https://www.geeksforgeeks.org/find-median-row-wise-sorted-matrix/
+https://leetcode.com/discuss/interview-question/374846/Twitter-or-OA-2019-or-University-Career-Fair
+https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/
+https://stackoverflow.com/questions/47593637/find-the-number-of-substrings-in-a-string-containing-equal-numbers-of-a-b-c/47605445#47605445
+https://leetcode.com/problems/subarray-sums-divisible-by-k/solution/
+https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
+https://www.geeksforgeeks.org/cost-balance-parantheses/
+https://www.programcreek.com/2012/12/leetcode-copy-list-with-random-pointer/   see solution 1
+https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
+https://www.geeksforgeeks.org/select-a-random-number-from-stream-with-o1-space/
+https://leetcode.com/problems/contiguous-array/solution/
+
+
+
+***Non Coding Questions/Design Questions***
+https://www.geeksforgeeks.org/implement-a-phone-directory/
+
+
+
+
+
+too tough | popular theorem based
+---------------------------------
+https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/
+https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/

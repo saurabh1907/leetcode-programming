@@ -1,0 +1,90 @@
+#include<iostream>
+#include<conio.h>
+#define MAX 5
+using namespace std;
+int queue[MAX],front=-1,rear=-1,i;
+void insert_element();
+void delete_element();
+
+
+int main()
+{
+  int option;
+  do
+  {
+   cout<<"\n\n 1.Insert an element";
+   cout<<"\n 2.Delete an element";
+   cout<<"\n 3.Exit";
+   cout<<"\n Enter your choice: ";
+   cin>>option;
+   switch(option)
+   {
+     case 1: insert_element();
+              break;
+     case 2: delete_element();
+             break;
+     case 3: cout<<"end";
+   }
+
+  }while(option!=4);
+}
+void insert_element()
+{
+  int num;
+  cout<<"\n Enter the number to be inserted: ";
+  cin>>num;
+  if(front==0 && rear==MAX-1)
+    cout<<"\n Queue OverFlow Occured";
+  else if(front==-1&&rear==-1)
+  {
+      front=rear=0;
+      queue[rear]=num;
+
+  }
+  else if(rear==MAX-1 && front!=0)
+  {
+    rear=0;
+    queue[rear]=num;
+  }
+  else
+  {
+      rear++;
+      queue[rear]=num;
+  }
+  if(front==-1)
+      cout<<"\n No elements to display";
+    else
+    {
+      cout<<"\n The queue elements are:\n ";
+      for(i=front;i<=rear;i++)
+      {
+           cout<<queue[i]<<" ";
+      }
+    }
+}
+void delete_element()
+{
+  int element;
+  if(front==-1)
+  {
+      cout<<"\n Underflow";
+  }
+
+  if(front==rear)
+     front=rear=-1;
+    else
+      front++;
+       cout<<"\n The deleted element is: %d",element;
+  if(front==-1)
+      cout<<"\n No elements to display";
+    else
+    {
+      cout<<"\n The queue elements are:\n ";
+      for(i=front;i<=rear;i++)
+      {
+          cout<<queue[i]<<" ";
+      }
+    }
+
+}
+

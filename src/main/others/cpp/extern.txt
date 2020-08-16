@@ -1,0 +1,28 @@
+Best way to declare and define global variables
+
+Although there are other ways of doing it, the clean, reliable way to declare and define global variables is to use a header file file3.h to contain an extern declaration of the variable. The header is included by the one source file that defines the variable and by all the source files that reference the variable. For each program, one source file (and only one source file) defines the variable. Similarly, one header file (and only one header file) should declare the variable.
+file3.h
+
+extern int global_variable;  /* Declaration of the variable */
+
+file1.c
+
+#include "file3.h"  /* Declaration made available here */
+#include "prog1.h"  /* Function declarations */
+
+/* Variable defined here */
+int global_variable = 37;    /* Definition checked against declaration */
+
+int increment(void) { return global_variable++; }
+
+file2.c
+
+#include "file3.h"
+#include "prog1.h"
+#include <stdio.h>
+
+void use_it(void)
+{
+    printf("Global variable: %d\n", global_variable++);
+}
+

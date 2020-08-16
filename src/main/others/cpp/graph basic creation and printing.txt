@@ -1,0 +1,54 @@
+#include<stdio.h>
+
+struct node
+{
+
+    struct node *edge[10];
+    int wt[10],id;
+} ver[10];
+
+int makegraph()
+{
+    int i=0,j=0,nov=0;
+    int ch;
+    printf("Enter number of vertices in the graph");
+    scanf("%d",&nov);
+    for(i=0;i<nov;i++)
+    {
+        ver[i].id=i;
+        for(j=0;j<nov;j++)
+        {
+            printf("Is there any edge between vertex %d and %d(Yes 1/No 0)\n",i,j);
+            scanf("%d",&ch);
+            if(ch==1)
+            {
+                ver[i].edge[j]=&ver[j];
+                printf("Enter the weight of the edge");
+                scanf("%d",&ver[i].wt[j]);
+            }
+        }
+    }
+    return nov;
+}
+
+void showgraph(int nov)
+{
+    int i,j;
+    for(i=0;i<nov;i++)
+    {
+        printf("ver[%d]:-\nEdges:-",i);
+        for(j=0;j<nov;j++)
+        {   if(ver[i].edge[j]!=NULL)
+        {
+            printf("(%d,%d),",ver[i].edge[j]->id,ver[i].wt[j]);
+        }
+        }
+    }
+}
+
+int main()
+{   int k;
+    k=makegraph();
+    showgraph(k);
+    return 0;
+}

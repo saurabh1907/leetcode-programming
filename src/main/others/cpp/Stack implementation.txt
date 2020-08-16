@@ -1,0 +1,84 @@
+
+
+/*STACK PUSH() AND POP() IMPLEMENTATION USING ARRAYS*/
+#include <stdio.h>
+#include<conio.h>
+#define MAX 5
+int top,i;
+
+/*PUSH FUNCTION*/
+void push (int stack[], int item)
+{   if (top == (MAX-1))
+{
+printf ("\nThe Stack is Full\n");
+}
+    else
+    {
+++top;
+stack [top] = item;
+ printf ("\nAfter Pushing ");
+ for (i=top; i>=0; --i)
+  printf ("\n|%3d   |\n",stack[i]);
+
+
+    }
+}
+
+/*POP FUNCTION*/
+void pop (int stack[])
+{
+int ITEM;
+    if (top == -1)
+    {   ITEM = 0;
+    printf ("empty\n");
+
+    }
+    else
+    {
+ITEM = stack [top];
+--top;
+printf ("\nAfter Poping ");
+ for (i=top; i>=0; --i)
+  printf ("\n|%3d| \n  ",stack[i]);
+
+    printf ("\n");
+    }
+
+}
+
+
+/*MAIN PROGRAM*/
+int main()
+{
+
+int stack [MAX], item;
+    int ch;
+    top = -1;
+
+    do
+    {
+         printf ("\NMAIN MENU");
+  printf ("\n1.PUSH (Insert) in the Stack");
+  printf ("\n2.POP  (Delete) from the Stack");
+  printf ("\n3.Exit (End the Execution)");
+  printf ("\nEnter Your Choice: ");
+  scanf  ("%d", &ch);
+  if (ch<1 || ch>3)
+      printf ("\nInvalid Choice, Please try again");
+
+       switch (ch)
+       {case 1:
+printf ("\nEnter the Element to be pushed : ");
+scanf  ("%d", &item);
+push (stack, item);
+break;
+       case 2:
+ pop (stack);
+
+break;
+       default:
+printf ("\nEND OF EXECUTION");
+       }
+    }while (ch != 3);
+getch();
+}

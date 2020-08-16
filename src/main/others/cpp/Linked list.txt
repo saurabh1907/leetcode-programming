@@ -1,0 +1,142 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int info;
+    struct node *next;
+
+}*head;typedef struct node node;
+int item;
+void insert_beg()
+{
+    node *temp;
+    temp=(node *)malloc(sizeof(node));
+    printf("\nenter value to be inserted");
+                scanf("%d",&item);
+    if(head==NULL)
+    {temp->info=item;
+    temp->next=NULL;
+    head=temp;
+    }
+    else
+    {temp->next=head;
+    temp->info=item;
+    head=temp;
+    }
+}
+void insert_end()
+{
+ node *temp1,*temp;
+ temp1=(node *)malloc(sizeof(node));
+ temp1=head;
+ printf("\nenter value to be inserted");
+ scanf("%d",&item);
+ while(temp1->next!=NULL)
+ {
+        temp1=temp1->next;
+}
+temp=(node *)malloc(sizeof (node));
+temp->info=item;
+temp->next=NULL;
+temp1->next=temp;
+}
+void insert_custom()
+{    int choice,i;
+    printf("\nenter value to be inserted");
+    scanf("%d",&item);
+    printf("enter the node no after which u want to insert the node\n");
+    scanf("%d",&choice);
+    node *temp1,*temp;
+    temp1=(node *)malloc(sizeof(node));
+    temp1=head;i=1;
+    while(i<choice)
+    {
+        i++;
+        temp1=temp1->next;
+    }
+    temp=(node *)malloc(sizeof(node));
+    temp->info=item;
+    temp->next=temp1->next;
+    temp1->next=temp;
+}
+void delete_beg()
+{   if(head==NULL)
+    printf("underflow\n");
+    else{
+    node *temp;
+    temp=head;
+    head=temp->next;
+    free(temp);
+}
+}
+void delete_end()
+{   if(head->next==NULL)
+    printf("underflow\n");
+    else{
+    node *temp1,*temp2;
+    temp1=(node *)malloc(sizeof(node));
+    temp1=head;
+    while(temp1->next!=NULL)
+{
+        temp2=temp1;
+        temp1=temp1->next;
+}       temp2->next=NULL;
+        free(temp1);
+}
+}
+void delete_custom()
+{    int choice,i;
+    printf("enter the node no u want to delete the node\n");
+    scanf("%d",&choice);
+    node *temp1,*temp;
+    temp1=(node *)malloc(sizeof(node));
+    temp1=head;i=1;
+    while(i<choice)
+    {
+        i++;
+        temp=temp1;
+        temp1=temp1->next;
+    }
+        temp->next=temp1->next;
+        free(temp1);
+}
+void traverse()
+{   if(head==NULL)
+    printf("empty");
+    else
+    {
+    node *temp1;
+    temp1=(node *)malloc(sizeof(node));
+    temp1=head;
+    while(temp1!=NULL)
+ {
+        printf("%d",temp1->info);
+        temp1=temp1->next;
+
+
+}}
+}
+int main()
+{int op;
+head=NULL;
+    do
+    {
+printf("\nenter choice\n");
+printf("1.insert at beg \n2.Insert at end\n3.Insert at custom place\n4.Delete at beg\n5.delete at end\n6.Delete at custom place\n7.Traverse\n8.exit\n");
+scanf("%d",&op);
+switch(op)
+{
+    case 1:insert_beg();break;
+    case 2:insert_end();break;
+    case 3:insert_custom();break;
+    case 4:delete_beg();break;
+    case 5:delete_end();break;
+    case 6:delete_custom();break;
+    case 7:traverse();break;
+    case 8:printf("exit");break;
+    default:printf("invalid option\n");
+}
+}
+while(op!=8);
+}
+

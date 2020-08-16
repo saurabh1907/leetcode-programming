@@ -1,0 +1,30 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{   char string_inpA[10],string_inpB[5];
+    int counter=0,i,j,k,lenA,lenB;
+    cout<<"enter the string";
+    cin>>string_inpA;
+    cin>>string_inpB;
+    lenA=strlen(string_inpA);
+    lenB=strlen(string_inpB);
+    for(i=0;i<(lenA-lenB+1);i++)
+    {   k=i;
+        for(j=0;j<lenB;j++)
+        {
+        if(string_inpA[k]==string_inpB[j])
+        {k++;
+        if(j+1==lenB)
+            cout<<"string found";counter=1;
+        }
+        else
+            break;
+        }
+        if(counter==1)
+            break;
+}
+if(counter==0)
+    cout<<"sting not found";
+}
+

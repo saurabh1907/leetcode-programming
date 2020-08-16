@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+#define MAX 5
+
+static int i = 0;
+int G[MAX][MAX];
+int n;
+int visited[10];
+
+
+dfs(int u)
+{
+	int k;
+	int a[30] = {0};
+	
+	printf("%d ->", u);
+	visited[u] = 1;
+	for(k = 1; k <= n; k++)
+		if(G[u][k] && !visited[k] ){
+			 (visited[i] == 1) ;
+			dfs(k);
+	}
+
+	return;
+}
+
+main()
+{
+	int u, v;
+	int i, j, k;
+	int a[30];
+
+	printf("No.of nodes: \n");
+	scanf ("%d", &n);
+	printf("Adjacency matrix: \n");
+	for (i = 1; i <= n; i++)
+		for (j = 1; j <= n; j++)
+			scanf("%d", &G[i][j]);
+			printf("source: \n");
+			scanf("%d", &u);
+			dfs(u);
+			
+
+}		
